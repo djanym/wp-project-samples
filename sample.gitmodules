@@ -1,0 +1,9 @@
+[submodule "wp-content/themes/pango/vendor/djanym/wphelpers"]
+	path = wp-content/themes/pango/vendor/djanym/wphelpers
+	url = git@github.com:djanym/wphelpers.git
+[submodule "wp-content/themes/pango/src/wp-blocks"]
+	path = wp-content/themes/pango/src/wp-blocks
+	url = git@github.com:djanym/wp-blocks.git
+[submodule "wp-content/themes/pango/src/scss/wp-theme-styles-lib"]
+	path = wp-content/themes/pango/src/scss/wp-theme-styles-lib
+	url = git@github.com:djanym/wp-theme-styles-lib.git

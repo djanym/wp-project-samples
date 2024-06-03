@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+@use "vars";
+@use "wp-theme-styles-lib/mixins" as mx;
+@use "reusable";
+@import "wp-theme-styles-lib/bootstrap-required";
+
+@mixin navbar-hovered() {
+    @if vars.$top-nav-row-bg-color-hover {
+        background-color: vars.$top-nav-row-bg-color-hover;
+    }
+
+    .navbar-nav {
+        > li {
+            //color: vars.$color-1;
+
+            > a {
+                //color: vars.$color-1;
+            }
+        }
+    }
+}
+
+.page-scrolled {
+    .site-header {
+        transition: background-color 0.2s ease-in-out;
+        @if vars.$top-nav-row-bg-color-scrolled {
+            background-color: vars.$top-nav-row-bg-color-scrolled;
+        }
+    }
+}
+
+.site-header {
+    @include mx.fixed(0, 2000);
+    background-color: vars.$top-nav-row-bg-color;
+    transition: background-color 0.2s ease-in-out;
+
+    .nav-row {
+        //flex-direction: row;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: vars.$top-nav-row-spacing-y;
+
+        @include padding(vars.$top-nav-row-spacing-y vars.$top-nav-row-spacing-x);
+
+        // For mobile menu.
+        @include mx.breakpoint-max(vars.$navbar-mobile) {
+            @if vars.$top-nav-row-mobile-spacing-y {
+                padding-right: vars.$top-nav-row-mobile-spacing-y;
+                padding-left: vars.$top-nav-row-mobile-spacing-y;
+            }
+
+            @if vars.$top-nav-row-mobile-spacing-x {
+                padding-right: vars.$top-nav-row-mobile-spacing-x;
+                padding-left: vars.$top-nav-row-mobile-spacing-x;
+            }
+        }
+
+        @if vars.$top-nav-row-min-height {
+            min-height: rfs-value(vars.$top-nav-row-min-height);
+        }
+
+        @if vars.$top-nav-row-max-width {
+            max-width: rfs-value(vars.$top-nav-row-max-width);
+        }
+
+        position: relative;
+
+        @include mx.breakpoint-max(vars.$navbar-mobile) {
+            flex-direction: row;
+        }
+
+        @include mx.breakpoint-max(vars.$mobile) {
+            //flex-wrap: wrap;
+        }
+    }
+
+    .navbar-mobile-header {
+        @include mx.breakpoint-max(vars.$navbar-mobile) {
+            //@include padding(20px 24px);
+        }
+    }
+
+    .site-logo {
+        display: flex;
+        align-items: center;
+        //@include margin-right(25px);
+
+        @include mx.breakpoint-less-than(vars.$small-laptop) {
+            //@include margin-right(1vw);
+        }
+
+        @include mx.breakpoint-max(vars.$mobile) {
+            flex-basis: 60%;
+            @include margin-right(3vw);
+        }
+
+        a {
+            display: inline-block;
+        }
+
+        img {
+            width: 100%;
+            z-index: 1;
+            position: relative;
+
+            @include mx.breakpoint-max(vars.$navbar-mobile) {
+                max-height: mx.rfs-value(vars.$top-nav-row-min-height);
+            }
+        }
+    }
+
+    .nav-box {
+        //@include padding(false 0);
+    }
+
+    // web site navigation and header start here.
+    //@import 'navigation';
+
+    //@include triangle($red-color, 15px);
+
+    .triangle {
+        //opacity: .95;
+    }
+
+}
+
+// header end
+
+// Adds spacing to the top of the page when the admin bar is visible. Use px as it is defined in the admin bar CSS.
+.admin-bar {
+    .site-header {
+        padding-top: 32px;
+
+        @include mx.breakpoint-less-than(782px) {
+            padding-top: 46px;
+        }
+
+        @include mx.breakpoint-max(vars.$navbar-mobile) {
+            .navbar-mobile {
+                padding-top: 32px;
+
+                @include mx.breakpoint-max(782px) {
+                    padding-top: 46px;
+                }
+            }
+        }
+    }
+}
+
+// Overwrite the admin bar CSS to make it fixed on mobile.
+@media screen and (max-width: 600px) {
+    #wpadminbar {
+        position: fixed;
+    }
+}

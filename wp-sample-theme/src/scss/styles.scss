@@ -1,0 +1,776 @@
+@charset "UTF-8";
+
+@use "wp-theme-styles-lib/styles";
+
+@use "vars";
+@use "wp-theme-styles-lib/mixins" as mx;
+@use "wp-theme-styles-lib/wp-core" as wp;
+@use "header";
+@use "footer";
+@use "wp-theme-styles-lib/navigation";
+@use "wp-theme-styles-lib/features";
+
+@use "reusable";
+
+@import "wp-theme-styles-lib/bootstrap-required";
+
+// For forms:
+@import "../../node_modules/bootstrap/scss/forms/labels";
+@import "../../node_modules/bootstrap/scss/forms/form-text";
+@import "../../node_modules/bootstrap/scss/forms/form-control";
+@import "../../node_modules/bootstrap/scss/forms/form-select";
+
+//@include mx.font-face('icomoon', vars.$font-path/icomoon, normal, normal, woff eot ttf svg);
+
+@include navigation.enable-nav-bar();
+@include wp.wp-block-button(vars.$buttons, primary, vars.$buttons-hover-state, vars.$buttons-active-state);
+@include features.enable-buttons-classes(vars.$buttons, vars.$buttons-hover-state, vars.$buttons-active-state);
+
+@include reusable.custom-site-back-front-end;
+
+// ------------ Additional classes ------------
+
+// ------------ IF MOBILE classes ------------
+
+// Breakpoint not includes mobile view.
+@include mx.breakpoint-greater-than(vars.$mobile) {
+    .padding-bottom-0-ifn-mobile {
+        //padding-bottom: 0 !important;
+    }
+}
+
+// Mobile and lower.
+@include mx.breakpoint-max(vars.$mobile) {
+    .hide-media-if-mobile {
+        display: none;
+    }
+}
+
+// ------------ Layout classes ------------
+
+// Make first block padding include menu height.
+.include-nav-padding {
+    padding-top: vars.$top-nav-row-min-height;
+    //padding-top: 0;
+
+    > div,
+    > header,
+    > section {
+        &:first-child {
+            //padding-top: vars.$top-nav-row-min-height;
+
+            @include mx.breakpoint-max(vars.$navbar-mobile) {
+                //$_padding-top: 52px + vars.$custom-container-spacing-y-mobile;
+                //padding-top: $_padding-top;
+            }
+        }
+    }
+}
+
+.content-block,
+.content-block-fluid {
+    @extend %clearfix;
+}
+
+.entry-header-section {
+    padding: 1.75rem;
+    justify-content: center;
+    background-color: vars.$color-5;
+    background-attachment: fixed;
+    background-size: cover;
+    color: $color-1;
+
+    @include mx.breakpoint-max(vars.$mobile) {
+        padding-right: 0;
+        padding-left: 0;
+
+        &:not(.has-cover-image-bg) {
+            padding: 1.25rem 0;
+        }
+    }
+}
+
+.page-header-content {
+    max-width: 42.75rem;
+    @include mx.generate-properties-from(vars.$typography, p-header);
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.archive-header-section {
+    @extend .entry-header-section;
+
+    &.secondary {
+        background-color: #FFFFFF;
+        padding-bottom: 0;
+    }
+
+    .page-title {
+        text-align: center;
+    }
+}
+
+.archive-header-content {
+    font-size: 1.125rem;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    &.categories-list {
+        text-align: center;
+        color: vars.$color-4;
+
+        label {
+            color: vars.$color-5;
+            font-weight: bold;
+        }
+
+        a {
+            color: vars.$color-4;
+            text-decoration: none;
+
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: underline;
+            }
+        }
+
+        .separator {
+            margin: 0 0.25rem
+        }
+    }
+
+    &.search-query {
+        margin-bottom: 1rem;
+        text-align: center;
+        color: vars.$color-4;
+    }
+}
+
+.archive-description {
+    margin-top: 1rem;
+
+    color: vars.$body-color;
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.has-cover-image-bg {
+    min-height: 21.5rem;
+    padding: 8.5rem 1.75rem;
+}
+
+h1.page-title {
+    color: vars.$color-1;
+}
+
+li > ul {
+    margin-top: 0.4rem;
+}
+
+.side-content-container {
+    float: right;
+    width: 40%;
+    margin: 0;
+    margin-inline: 0;
+    padding-bottom: 1rem;
+    //margin-inline-start: 2em;
+    //margin-inline-end: 0;
+    //max-width: 30rem;
+    //max-width: 40%;
+
+    @include mx.breakpoint-max(vars.$tablet) {
+        width: 50%;
+        margin: 0;
+        padding-bottom: 2rem;
+    }
+
+    @include mx.breakpoint-max(vars.$mobile) {
+        width: 100%;
+        margin: 0;
+        float: none;
+    }
+}
+
+.posts-list-container {
+    @include features.masonry-listing-styles(3, 1rem, 2rem);
+
+    $_content-gap: 1rem;
+    $_content-spacing-y: 1rem;
+    $_content-spacing-x: 1rem;
+
+    .entry-wrapper {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
+
+    .post-thumbnail {
+        width: 100%;
+        height: auto;
+    }
+
+    .entry-content {
+        display: flex;
+        flex-direction: column;
+        gap: $_content-gap;
+        padding: $_content-spacing-y $_content-spacing-x;
+
+        .entry-title {
+            @include mx.generate-properties-from(vars.$typography, h-5);
+            margin: 0;
+
+            a {
+                color: vars.$color-4;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .entry-meta {
+            font-style: italic;
+        }
+
+        .entry-excerpt {
+            a {
+                color: vars.$color-4;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @include mx.breakpoint-max(vars.$narrow) {
+        > .post {
+            width: calc(100% / 2);
+        }
+    }
+
+    @include mx.breakpoint-max(vars.$mobile) {
+        > .post {
+            width: calc(100% / 1);
+            padding: 0;
+        }
+    }
+}
+
+.testimonials-list {
+    @include features.masonry-listing-styles(2, 1rem, 3rem);
+
+    $_content-gap: 0.5rem;
+
+    .entry-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: flex-start;
+        border: none;
+        gap: $_content-gap;
+
+        .wp-block-quote {
+            box-shadow: 0 1px 5px rgba(216, 216, 216, 0.75);
+        }
+
+        hr {
+            opacity: 1;
+        }
+    }
+
+    @include mx.breakpoint-max(vars.$narrow) {
+        > .post {
+            width: calc(100% / 1);
+            padding: 0;
+        }
+    }
+}
+
+.custom-media-text {
+    @include mx.breakpoint-max(vars.$narrow) {
+        grid-template-columns: 40% auto !important;
+        > :nth-child(1) {
+            padding-right: 1rem;
+        }
+
+        &.has-media-on-the-right {
+            grid-template-columns: auto 40% !important;
+        }
+    }
+}
+
+.post-edit-link {
+    color: #aa0000;
+}
+
+.author-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid vars.$color-5;
+    gap: 1rem;
+
+    .author-image {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 6rem;
+        height: 6rem;
+
+
+        img {
+            margin: 0;
+            height: auto;
+        }
+    }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        a {
+            color: vars.$color-4;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .separator {
+        margin: 0 0.25rem;
+    }
+}
+
+// ------------ Pagination styles ------------
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+
+    > ul {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+        }
+
+        .page-link,
+        .current {
+            display: inline-block;
+            padding: 0.5rem 0.95rem;
+            text-decoration: none;
+            border: 1px solid #aaaaaa;
+            border-radius: 3px;
+        }
+
+        .page-link {
+            &.prev {
+                &::before {
+                    content: '«';
+                    margin: 0 0.25rem 0 0;
+                }
+            }
+            &.next {
+                &::after {
+                    content: '»';
+                    margin: 0 0 0 0.25rem;
+                }
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                border: 1px solid #888888;
+                background-color: #f9f9f9;
+            }
+        }
+
+        .current {
+            background-color: vars.$color-5;
+            border-color: vars.$color-5;
+            color: #fff;
+        }
+    }
+}
+
+// ------------ Revolution Slider styles ------------
+
+.revslider {
+    margin-bottom: 1rem;
+
+    .button-primary {
+        @include mx.generate-properties-from(vars.$buttons, primary, true);
+
+        &:hover, &:focus {
+            @include mx.generate-properties-from(vars.$buttons-hover-state, primary, true);
+        }
+
+        &:active {
+            @include mx.generate-properties-from(vars.$buttons-active-state, primary, true);
+        }
+    }
+}
+
+// ------------ Business Review styles ------------
+
+.business-reviews-block {
+    position: relative;
+    z-index: 2;
+    width: 93%;
+    //margin: -135px auto 30px;
+    margin: -7.25rem auto 0;
+
+    @extend %clearfix;
+
+    @include mx.breakpoint-max(vars.$mobile) {
+        width: 90%;
+    }
+}
+
+// ------------ Navbar styles ------------
+
+.navbar-nav .sub-menu li:hover {
+    transition: all ease-in-out 0.1s;
+}
+
+// ------------ Navbar Mobile Breakpoint styles ------------
+
+// ------------ WP core styles ------------
+
+.wp-block-media-text {
+    @include mx.breakpoint-max(vars.$mobile) {
+        //gap: vars.$custom-media-text-container-gap-mobile;
+    }
+
+    // Replaces `gap` with paddings.
+    > :nth-child(1) {
+        padding-right: 30px;
+        padding-left: 0;
+
+        @include mx.breakpoint-max(vars.$mobile) {
+            padding-right: 0;
+        }
+    }
+
+    > :nth-child(2) {
+        padding-right: 0;
+        padding-left: 30px;
+
+        @include mx.breakpoint-max(vars.$mobile) {
+            padding-left: 0;
+        }
+    }
+
+    &__content {
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &.is-stacked-on-mobile {
+        @include mx.breakpoint-max(vars.$mobile) {
+            .wp-block-media-text {
+                &__content {
+                    order: 1;
+                    grid-row: 1;
+                }
+
+                &__media {
+                    order: 2;
+                    grid-row: 2;
+                }
+            }
+        }
+    }
+}
+
+// ------------ TOC styles ------------
+
+#ez-toc-container {
+    margin-bottom: 1.25rem;
+    padding: 1rem 0 0 .875rem;
+
+    @include mx.breakpoint-max(vars.$mobile) {
+        padding: 0;
+    }
+
+    .ez-toc-title-container,
+    > nav {
+        margin: 0 0 0 20px;
+        padding: 0 0 0 15px;
+
+        @include mx.breakpoint-max(vars.$mobile) {
+            margin: 0 0 0 5px;
+            padding: 0 0 0 5px;
+        }
+    }
+
+    .ez-toc-title {
+        //margin: 5px 0;
+        margin: 0 0 0.5rem 0;
+        font-family: var(--wp--preset--font-family--heading);
+        font-size: 16px;
+        font-weight: bold;
+        color: vars.$color-7;
+    }
+
+    .ez-toc-list {
+        margin: 0 0 0 0.625rem;
+        padding: 0;
+        list-style-type: disc;
+        //color: #000000;
+
+        li {
+            margin-bottom: 0.25rem;
+            color: vars.$color-4;
+
+            a {
+                color: vars.$color-4;
+                text-decoration: none;
+
+                &:hover {
+                    color: var(--wp--custom--colors--link);
+                    text-decoration: underline;
+                }
+
+                + ul {
+                    margin-top: 0.2rem;
+                }
+            }
+        }
+    }
+}
+
+// ------------ Content Side Form styles ------------
+
+.content-form-block {
+    margin-bottom: 1.5rem;
+
+    .form-heading,
+    .form-subheading {
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .form-heading {
+        margin-bottom: 0.5rem;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.625rem;
+    }
+
+    .form-subheading {
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.25rem;
+    }
+
+    .wpcf7 {
+        margin: 0 0 0 2rem;
+        padding: 0;
+
+        @include mx.breakpoint-max(vars.$mobile) {
+            margin: 0;
+        }
+
+        .wpcf7-form {
+            .wpcf7-response-output {
+                //margin: 0;
+            }
+        }
+
+        #{mx.$all-text-inputs} {
+            //width: 100%;
+            //background-color: #ffffff;
+            //border: 1px solid var(--wp--preset--color--luminous-vivid-orange);
+            //border-radius: 15px;
+            //font-size: 20px;
+            //padding: 15px;
+        }
+
+        textarea {
+            //height: 10rem;
+        }
+
+        button,
+        input[type=submit] {
+            //background-color: var(--wp--preset--color--luminous-vivid-orange);
+            //border-radius: 15px;
+            //font-family: arial;
+            //font-size: 20px;
+            //padding: 15px 40px;
+            //color: #ffffff;
+            //font-weight: normal;
+            //display: inline-block;
+        }
+    }
+}
+
+// ------------ Form styles ------------
+
+// For buttons in form
+//form {
+//    @each $key, $value in vars.$buttons {
+//        .button-#{$key} {
+//            @extend %button-#{$key};
+//
+//            &:hover, &:focus {
+//                @extend %button-hover-#{$key} !optional;
+//            }
+//
+//            &:active {
+//                @extend %button-active-#{$key} !optional;
+//            }
+//        }
+//    }
+//}
+
+//.container-normal-form {
+//    max-width: mx.rfs-value(533px);
+//    margin: 0 auto;
+//}
+//
+//.container-narrow-form {
+//    max-width: mx.rfs-value(390px);
+//
+//    @include mx.breakpoint-max(vars.$mobile) {
+//        max-width: unset;
+//    }
+//}
+
+.wp-block-contact-form-7-contact-form-selector {
+    width: 100%;
+    max-width: 35rem;
+}
+
+.wpcf7 {
+    .wpcf7-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        label {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        #{mx.$all-text-inputs} {
+            width: 100%;
+        }
+
+        .wpcf7-response-output {
+            margin: 0;
+        }
+
+        .wpcf7-form-control-wrap {
+            display: block;
+            //@include mx.margin-bottom(16px);
+        }
+
+        .wpcf7-response-output {
+            margin: 1rem 0.5em;
+            padding: 0;
+            border: none;
+        }
+
+        &.sent .wpcf7-response-output {
+            color: #2b8032;
+        }
+
+        &.invalid .wpcf7-response-output {
+            color: #aa0000;
+        }
+
+        .wpcf7-not-valid-tip {
+            @include mx.margin-top(4px);
+            color: #F83446;
+        }
+
+        .wpcf7-spinner {
+            vertical-align: middle;
+            margin: 0 -24px 0 24px;
+        }
+
+        textarea {
+            height: 10rem;
+        }
+    }
+}
+
+#{mx.$all-text-inputs} {
+    @include mx.generate-properties-from(vars.$typography, input-text);
+
+    padding: 0.75rem;
+    border: 1px solid #D8D8D8;
+    @include mx.border-radius(3px);
+    background: #f9f9f9;
+    transition: all 0.2s ease-in-out 0s;
+
+    &::placeholder {
+        color: #888888;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: #F3F3F3;
+        border: 1px solid #5A5F65;
+    }
+
+    &[disabled] {
+        background-color: #F0F0F0;
+        color: #AAACAE;
+        border: 1px solid #D8D8D8;
+
+        &::placeholder {
+            color: #AAACAE;
+        }
+    }
+
+    &::selection {
+        background-color: #EBF7FF;
+    }
+
+    &[aria-invalid="true"],
+    &.wpcf7-not-valid {
+        border-color: #F83446;
+    }
+}
+
+#{mx.$all-buttons} {
+    @include mx.generate-properties-from(vars.$buttons, primary);
+
+    &:hover,
+    &:focus {
+        @include mx.generate-properties-from(vars.$buttons-hover-state, primary);
+    }
+
+    &:active {
+        @include mx.generate-properties-from(vars.$buttons-active-state, primary);
+    }
+}

@@ -1,0 +1,37 @@
+<?php
+/**
+ * Title: Pango Flip Box
+ * Slug: pango/flipbox
+ * Categories: theme-custom-patterns
+ * Description: Custom theme flip box block.
+ * Keywords: flipbox, flip box, flip, box, pango, card
+ * Block Types: flipbox/flipbox-block, theme/custom-container
+ */
+?>
+<!-- wp:flipbox/flipbox-block {"blockId":"eb-flipbox-w1jyj","blockMeta":{"desktop":".eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-items-container { align-items:center }.eb-flipbox-align-center .eb-flipper { margin-right:auto !important; margin-left:auto !important }.eb-flipbox-align-right .eb-flipper { margin-left:auto !important }.eb-flipbox-container.eb-flipbox-w1jyj { margin-top:28px; margin-bottom:28px; width:100%; overflow:hidden }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-front-title, .eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-back-title { width:100%; text-align:center }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-front-title { color:#24272A }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-back-title { color:#24272A }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-front-content, .eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-back-content { width:100%; text-align:center; margin:10px 0 }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-front-content { color:#ffffff }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-back-content { color:#24272A }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipper { transition:0.6s; min-height:250px; max-width:350px }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipper.back-is-selected { transform:none }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipper .eb-flipbox-front { background-color:#FFFFFF; min-height:250px; max-width:350px; border-width:1px; border-color:#0C1E4B; border-style:solid; border-radius:20px; display:flex; justify-content:center; align-items:center; height:auto; width:100%; z-index:1; transition:background 0.5s, border 0.5s, border-radius 0.5s, box-shadow 0.5s }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipper .eb-flipbox-front:before { transition:background 0.5s, opacity 0.5s, filter 0.5s }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-front .eb-flipbox-front-image-container { display:flex; justify-content:center }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-front .eb-flipbox-front-image-container img { height:100px; width:100px }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-icon-front { font-size:50px; color:#ffffff; background:transparent; width:100%; text-align:center; display:none; transition:border 0.5s, border-radius 0.5s, box-shadow 0.5s }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-icon-front  .dashicons { font-size:50px }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-icon-back { font-size:50px; color:#ffffff; background:transparent; width:100%; text-align:center; display:none; transition:border 0.5s, border-radius 0.5s, box-shadow 0.5s }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-icon-back .dashicons { font-size:50px }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipper .eb-flipbox-back { background-color:#F1F7FB; min-height:250px; max-width:350px; border-width:1px; border-color:#0C1E4B; border-style:solid; border-radius:20px; display:flex; flex-direction:column; justify-content:center; align-items:center; height:auto; width:100%; transform:false; transition:background 0.5s, border 0.5s, border-radius 0.5s, box-shadow 0.5s; cursor:default }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipper .eb-flipbox-back:before { transition:background 0.5s, opacity 0.5s, filter 0.5s }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipper .eb-flipbox-front,.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipper .eb-flipbox-back { position:absolute }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-back .eb-flipbox-back-image-container { display:none; justify-content:center }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-back .eb-flipbox-back-image-container img { height:100px; width:100px }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-button-container .eb-flipbox-button-link { width:100px; transition:border 0.5s, border-radius 0.5s, box-shadow 0.5s }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-button-container .eb-flipbox-button-content { display:flex; flex-direction:row-reverse; justify-content:space-around; align-items:center }.eb-flipbox-container.eb-flipbox-w1jyj .eb-flipbox-button-container .eb-flipbox-button-content .eb-flipbox-button-icon { display:none }","tab":"","mobile":""},"frontIconOrImage":"image","frontImageUrl":"https://pango.server.local/wp-content/uploads/2024/03/vpn.svg","frontImageAlt":"","backIconOrImage":"none","frontTitle":"Title here","showFrontContent":false,"linkType":"button","buttonText":"Learn more","link":"","frontTitleColor":"#24272A","backTitleColor":"#24272A","backContentColor":"#24272A","buttonStyle":"custom","boxHeightRange":250,"boxWidthRange":350,"front_borderColor":"#0C1E4B","front_borderStyle":"solid","front_Rds_Top":"20","front_Rds_Right":"20","front_Rds_Bottom":"20","front_Rds_Left":"20","front_wrapper_backgroundType":"classic","front_wrapper_backgroundColor":"#FFFFFF","front_wrapper_gradientColor":"linear-gradient(90deg, #4919f6 0% , #7529f9 100%)","back_wrapper_backgroundType":"classic","back_wrapper_backgroundColor":"#F1F7FB","back_wrapper_gradientColor":"linear-gradient(90deg, #7529f9 0% , #4919f6 100%)","commonStyles":{"desktop":".wp-admin .eb-parent-eb-flipbox-w1jyj { display:block; opacity:1 }.eb-parent-eb-flipbox-w1jyj { display:block }","tab":".editor-styles-wrapper.wp-embed-responsive .eb-parent-eb-flipbox-w1jyj { display:block; opacity:1 }.eb-parent-eb-flipbox-w1jyj { display:block }","mobile":".editor-styles-wrapper.wp-embed-responsive .eb-parent-eb-flipbox-w1jyj { display:block; opacity:1 }.eb-parent-eb-flipbox-w1jyj { display:block }"}} -->
+<div class="wp-block-flipbox-flipbox-block">
+    <div class="eb-parent-wrapper eb-parent-eb-flipbox-w1jyj ">
+        <div class="eb-flipbox-container eb-flipbox-w1jyj eb-flipbox-align-center eb-hover-mode" data-id="eb-flipbox-w1jyj" data-flip-type="flip-left" data-flip-mode="hover">
+            <div class="eb-flipper flip-left">
+                <div class="eb-flipbox-front">
+                    <div class="eb-flipbox-items-container">
+                        <div class="eb-flipbox-icon-wrapper">
+                            <div class="eb-flipbox-front-image-container"><img src="https://pango.server.local/wp-content/uploads/2024/03/vpn.svg" alt=""/></div>
+                        </div>
+                        <div class="eb-flipbox-front-title-wrapper"><h3 class="eb-flipbox-front-title">Title here</h3></div>
+                    </div>
+                </div>
+                <div class="eb-flipbox-back">
+                    <div class="eb-flipbox-items-container">
+                        <div class="eb-flipbox-back-title-wrapper"><h3 class="eb-flipbox-back-title">Back Title Here</h3></div>
+                        <div class="eb-flipbox-back-content-wrapper"><p class="eb-flipbox-back-content">Back Content Here</p></div>
+                        <div class="eb-flipbox-button-container"><a class="eb-flipbox-button-link " href="#" target="_self" rel="noopener">
+                                <div class="eb-flipbox-button-content"><span>Learn more</span></div>
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /wp:flipbox/flipbox-block -->

@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+@use "vars";
+@use "wp-theme-styles-lib/mixins" as mx;
+@use "wp-theme-styles-lib/features" as ft;
+
+// Create buttons styles.
+@each $key, $value in vars.$buttons {
+    // Create a placeholder selector for each paragraph style
+    %button-#{$key} {
+        @include mx.generate-properties($value);
+    }
+}
+
+// Create buttons styles.
+@each $key, $value in vars.$buttons-hover-state {
+    // Create a placeholder selector for each paragraph style
+    %button-hover-#{$key} {
+        @include mx.generate-properties($value);
+    }
+}
+
+// Create buttons styles.
+@each $key, $value in vars.$buttons-active-state {
+    // Create a placeholder selector for each paragraph style
+    %button-active-#{$key} {
+        @include mx.generate-properties($value);
+    }
+}
+
+@mixin custom-site-back-front-end {
+    @include ft.enable-list-columns-layout-styles;
+
+    // ------------ Testimonials styles ------------
+    blockquote.wp-block-quote {
+        position: relative;
+
+        @include mx.breakpoint-max(vars.$mobile) {
+            padding: 1.25rem 1.25rem 1.5rem 2.25rem;
+        }
+
+        .wp-block-separator {
+            margin-top: 0;
+            margin-bottom: .875rem;
+        }
+
+        p {
+            margin-bottom: .875rem;
+        }
+
+        .entry-title {
+            //margin: 10px 0 0;
+        }
+
+        &:before {
+            font-variant: normal;
+            position: absolute;
+            left: 20px;
+            top: 25px;
+            color: #999;
+            font-family: dashicons, serif;
+            content: "\f122";
+            display: inline-block;
+            line-height: 1;
+            font-weight: 400;
+            font-style: normal;
+            speak: never;
+            text-decoration: inherit;
+            text-transform: none;
+            text-rendering: auto;
+            width: 2rem;
+            height: 2rem;
+            font-size: 2rem;
+            vertical-align: top;
+            text-align: center;
+
+            @include mx.breakpoint-max(vars.$mobile) {
+                left: 10px;
+                width: 1.25rem;
+                height: 1.25rem;
+                font-size: 1.25rem;
+            }
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            background: #fff;
+            border-right: 1px solid #dbdbdb;
+            border-bottom: 1px solid #dbdbdb;
+            transform: rotate(45deg);
+            zoom: 1;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            bottom: -10px;
+            margin: auto;
+        }
+    }
+
+    .testimonials-author-block {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 1.25rem;
+        padding: 2rem vars.$post-content-spacing-y;
+        align-items: center;
+
+        .author-image {
+            flex-basis: 120px;
+            margin: 0;
+        }
+
+        .author-info {
+            flex: 1;
+            margin: 0;
+
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

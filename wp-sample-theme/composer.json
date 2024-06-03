@@ -1,0 +1,21 @@
+{
+    "name": "djanym/commtask",
+    "description": "CommTask",
+    "type": "wordpress-theme",
+    "authors": [
+        {
+            "name": "Nael Concescu",
+            "homepage": "https://cv.nael.pro"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "vendor/djanym/wphelpers"
+        }
+    ],
+    "require": {
+        "djanym/wphelpers": "dev-main"
+    }
+}

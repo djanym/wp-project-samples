@@ -1,0 +1,356 @@
+{
+    "version": 2,
+    "settings": {
+        "typography": {
+            "fluid": true,
+            "fontSizes": [
+                {
+                    "name": "Paragraph 1",
+                    "slug": "p-1",
+                    "size": "1.125rem",
+                    "lineHeight": "1.725rem"
+                },
+                {
+                    "name": "Paragraph 2",
+                    "slug": "p-2",
+                    "size": "1rem"
+                },
+                {
+                    "name": "Paragraph 3",
+                    "slug": "p-3",
+                    "size": "0.875rem"
+                },
+                {
+                    "name": "Paragraph 4",
+                    "slug": "p-4",
+                    "size": "0.75rem"
+                },
+                {
+                    "name": "Header 1",
+                    "slug": "h-1",
+                    "size": "2.5rem"
+                },
+                {
+                    "name": "Header 2",
+                    "slug": "h-2",
+                    "size": "2.25rem"
+                },
+                {
+                    "name": "Header 3",
+                    "slug": "h-3",
+                    "size": "2rem"
+                },
+                {
+                    "name": "Header 4",
+                    "slug": "h-4",
+                    "size": "1.75rem"
+                },
+                {
+                    "name": "Header 5",
+                    "slug": "h-5",
+                    "size": "1.5rem"
+                },
+                {
+                    "name": "Header 6",
+                    "slug": "h-6",
+                    "size": "1.25rem"
+                },
+                {
+                    "name": "Header 7",
+                    "slug": "h-7",
+                    "size": "1rem"
+                },
+                {
+                    "name": "Header 8",
+                    "slug": "h-8",
+                    "size": "0.875rem"
+                },
+                {
+                    "name": "Display Large",
+                    "slug": "d-lg",
+                    "size": "6rem"
+                },
+                {
+                    "name": "Display Medium",
+                    "slug": "d-md",
+                    "size": "3.25rem"
+                },
+                {
+                    "name": "Display Small",
+                    "slug": "d-sm",
+                    "size": "2.75rem"
+                },
+                {
+                    "name": "Display Extra Small",
+                    "slug": "d-xs",
+                    "size": "2.25rem"
+                },
+                {
+                    "name": "Label Large",
+                    "slug": "l-lg",
+                    "size": "1.125rem"
+                },
+                {
+                    "name": "Label Medium",
+                    "slug": "l-md",
+                    "size": "1rem"
+                },
+                {
+                    "name": "Label Small",
+                    "slug": "l-sm",
+                    "size": "0.875rem"
+                },
+                {
+                    "name": "Label Extra Small",
+                    "slug": "l-xs",
+                    "size": "0.75rem"
+                }
+            ]
+        },
+        "color": {
+            "defaultGradients": true,
+            "defaultPalette": true,
+            "palette": [
+                {
+                    "color": "#FFFFFF",
+                    "name": "White",
+                    "slug": "white"
+                },
+                {
+                    "color": "#F1F7FB",
+                    "name": "Theme Color 1",
+                    "slug": "theme-color-1"
+                },
+                {
+                    "color": "#24272A",
+                    "name": "Theme Color 2",
+                    "slug": "theme-color-2"
+                },
+                {
+                    "color": "#FF8956",
+                    "name": "Theme Color 3",
+                    "slug": "theme-color-3"
+                },
+                {
+                    "color": "#0C1E4B",
+                    "name": "Theme Color 4",
+                    "slug": "theme-color-4"
+                },
+                {
+                    "color": "#2563FF",
+                    "name": "Theme Color 5",
+                    "slug": "theme-color-5"
+                },
+                {
+                    "color": "#FFBF91",
+                    "name": "Theme Color 6",
+                    "slug": "theme-color-6"
+                },
+                {
+                    "color": "#FFE3CF",
+                    "name": "Theme Color 7",
+                    "slug": "theme-color-7"
+                },
+                {
+                    "color": "#05319F",
+                    "name": "Theme Color 8",
+                    "slug": "theme-color-8"
+                },
+                {
+                    "color": "#154ACF",
+                    "name": "Theme Color 9",
+                    "slug": "theme-color-9"
+                },
+                {
+                    "color": "#EBF7FF",
+                    "name": "Theme Color 10",
+                    "slug": "theme-color-10"
+                },
+                {
+                    "color": "#A6D6F7",
+                    "name": "Theme Color 11",
+                    "slug": "theme-color-11"
+                },
+                {
+                    "color": "#474D53",
+                    "name": "Theme Color 12",
+                    "slug": "theme-color-12"
+                },
+                {
+                    "color": "#AAACAE",
+                    "name": "Theme Color 13",
+                    "slug": "theme-color-13"
+                }
+            ],
+            "gradients": [
+                {
+                    "gradient": "linear-gradient(180deg, rgba(241, 247, 251, 0.75) 0%, rgba(241, 247, 251, 0.00) 100%), linear-gradient(98deg, rgba(255, 255, 255, 0.80) -5.81%, rgba(241, 247, 251, 0.80) 76.68%, rgba(47, 166, 248, 0.80) 159.17%), #F1F7FB",
+                    "name": "Theme Gradient 1",
+                    "slug": "theme-gradient-1"
+                },
+                {
+                    "gradient": "linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.00) 163.72%), linear-gradient(90deg, #DEEDFA -26.02%, #2FA6F8 49.51%, #EBF7FF 122.1%)",
+                    "name": "Theme Gradient 2",
+                    "slug": "theme-gradient-2"
+                },
+                {
+                    "gradient": "linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.00) 163.72%), linear-gradient(90deg, rgba(222, 237, 250, 0.30) -26.02%, rgba(47, 166, 248, 0.30) 49.51%, rgba(235, 247, 255, 0.30) 122.1%), #CDE5F6",
+                    "name": "Theme Gradient 3",
+                    "slug": "theme-gradient-3"
+                },
+                {
+                    "gradient": "linear-gradient(180deg, rgba(241, 247, 251, 0.75) 0%, rgba(241, 247, 251, 0) 100%), linear-gradient(98.34deg, rgba(255, 255, 255, 0.8) -5.81%, rgba(241, 247, 251, 0.8) 76.68%, rgba(47, 166, 248, 0.8) 159.17%), #2FA6F8",
+                    "name": "Theme Gradient 4",
+                    "slug": "theme-gradient-4"
+                }
+            ]
+        },
+        "spacing": {
+            "customSpacingSize": 1,
+            "spacingScale": {
+                "steps": 0
+            },
+            "spacingSizes": [
+                {
+                    "name": "Approx. 16px",
+                    "size": "1rem",
+                    "slug": "1"
+                },
+                {
+                    "name": "Approx. 20px",
+                    "size": "1.25rem",
+                    "slug": "2"
+                },
+                {
+                    "name": "Approx. 40px",
+                    "size": "2.5rem",
+                    "slug": "3"
+                },
+                {
+                    "name": "Approx. 60px",
+                    "size": "3.75rem",
+                    "slug": "4"
+                },
+                {
+                    "name": "Approx. 100px",
+                    "size": "6.25rem",
+                    "slug": "5"
+                },
+                {
+                    "name": "Approx. 160px",
+                    "size": "10rem",
+                    "slug": "6"
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "1110px",
+            "wideSize": "1260px"
+        }
+    },
+    "blocks": {
+        "custom-container": {
+            "attributes": {},
+            "supports": {
+                "gradients": true,
+                "margin": false,
+                "padding": true,
+                "blockGap": [
+                    "horizontal",
+                    "vertical"
+                ]
+            },
+            "styles": [],
+            "features": {
+                "hasHorizontalScrollerOption": true,
+                "hasGridLayoutOption": true,
+                "hasFlexLayoutOption": true
+            }
+        },
+        "custom-gallery-container": {
+            "attributes": {
+                "blockBgColor": "",
+                "blockBgColorPreset": "white",
+                "blockTextColor": "",
+                "blockTextColorPreset": "",
+                "blockGradientBgColor": "",
+                "blockGradientBgColorPreset": ""
+            },
+            "supports": {
+                "colors": true,
+                "gradients": true,
+                "bgColor": true
+            }
+        },
+        "card": {
+            "attributes": {
+                "blockBgColor": "",
+                "blockBgColorPreset": "theme-color-1",
+                "blockTextColor": "",
+                "blockTextColorPreset": "",
+                "blockGradientBgColor": "",
+                "blockGradientBgColorPreset": ""
+            },
+            "supports": {
+                "padding": true,
+                "align": true,
+                "colors": true,
+                "gradients": true,
+                "blockGap": true,
+                "bgColor": true
+            },
+            "styles": [
+                {
+                    "label": "Default",
+                    "name": "default",
+                    "isDefault": true
+                },
+                {
+                    "label": "Outline",
+                    "name": "outline"
+                }
+            ],
+            "features": {
+                "hasWidthOption": true
+            }
+        },
+        "card-image": {
+            "attributes": {
+                "blockBgColor": "",
+                "blockBgColorPreset": "white",
+                "blockTextColor": "",
+                "blockTextColorPreset": "",
+                "blockGradientBgColor": "",
+                "blockGradientBgColorPreset": ""
+            },
+            "supports": {
+                "align": true,
+                "colors": true,
+                "gradients": true,
+                "blockGap": true,
+                "bgColor": true
+            },
+            "styles": [],
+            "features": {
+                "hasWidthOption": true
+            }
+        },
+        "custom-media-text-container": {
+            "attributes": {},
+            "supports": {
+                "colors": true,
+                "gradients": true,
+                "bgColor": true,
+                "margin": false,
+                "padding": [
+                    "top",
+                    "bottom"
+                ],
+                "blockGap": [
+                    "horizontal",
+                    "vertical"
+                ]
+            }
+        }
+    }
+}

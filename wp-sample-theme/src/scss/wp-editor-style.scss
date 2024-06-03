@@ -1,0 +1,54 @@
+@use "vars";
+@use "wp-theme-styles-lib/mixins" as mx;
+@use "wp-theme-styles-lib/wp-core" as wp;
+@use "reusable";
+
+$content-spacing-x: vars.$post-content-spacing-x;
+$content-max-width: vars.$post-content-max-width;
+
+:root {
+    --editor-width: 100%;
+    --half-editor-width: calc(var(--editor-width) / 2);
+    --breakout-content-max-width: calc(#{rfs-value(vars.$breakout-content-max-width)} - #{$content-spacing-x}); // Counts also paddings from the container.
+    //--mobile-breakpoint: #{vars.$mobile-breakpoint};
+    //--post-content-max-width: #{rfs-value(vars.$post-content-max-width)};
+}
+
+.editor-styles-wrapper .is-root-container {
+    // In case of disabling `layout: constrained`. This is a copy of .content-block-fluid
+    padding-right: $content-spacing-x;
+    padding-left: $content-spacing-x;
+    max-width: $content-max-width;
+    margin-right: auto;
+    margin-left: auto;
+
+    .wp-block {
+        .is-layout-flex {
+            @for $i from 1 through 6 {
+                > h#{$i} {
+                    margin: 0;
+                }
+            }
+        }
+
+        &.parallax-image {
+            height: 180px;
+            overflow: hidden;
+            background-color: #4a148c;
+
+            img {
+                opacity: 0.75;
+            }
+        }
+    }
+
+    // For FSE theme.
+    &.has-global-padding {
+        //@include wp.enable-wp-editor-align-full;
+    }
+    @include wp.enable-wp-editor-align-full;
+
+    @include wp.wp-block-button(vars.$buttons, primary, vars.$buttons-hover-state, vars.$buttons-active-state);
+    @include reusable.custom-site-back-front-end;
+}
+

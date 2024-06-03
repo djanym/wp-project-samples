@@ -1,0 +1,496 @@
+$laptop: 1366px;
+$small-laptop: 1024px;
+$tablet: 850px;
+$narrow: 728px;
+$mobile: 640px;
+
+//$content-width: 768px; // ?
+
+$mobile-breakpoint: $small-laptop; // Breakpoint at which the mobile menu is displayed. Can be changed to any other value.
+
+$enable-wp-core-styles: true;
+
+$font-path: #{'../fonts'};
+
+//
+// Theme Colors:
+// Don't forget to sync with the colors in functions.php or in wp-blocks.config.json.
+//
+$color-1: #F1F7FB;
+$color-2: #dddddd;
+$color-3: #555555;
+$color-4: #2F2E3C;
+$color-5: #eab82e;
+$color-6: #0a367c;
+$color-7: #FF6900;
+
+$color-dark-1: #4b4b4b;
+
+//$hr-separator-color: $color-3; // used in wp-core.scss
+
+$use-rfs-typography: false; // Use the fluid typography with the rfs mixin.
+$typography: (
+        // Keys should be in kebab-case. Like: p1 => p-1, h1 => h-1, some123 => some-123.
+        p: (
+                font-size: 1rem,
+                line-height: 1.5,
+                margin-bottom: 1.25rem
+        ),
+        p-header: (
+                font-size: 1.125rem,
+                line-height: 1.7,
+        ),
+        blockquote-heading: (
+                font-size: 1.625rem,
+        ),
+        blockquote-entry: (
+                font-size: .875rem,
+        ),
+        h-1: (
+                font-family: ("Mulish", sans-serif),
+                font-size: 2.5rem,
+                font-weight: 700,
+                line-height: 1.5,
+                margin-bottom: 1.25rem
+        ),
+        h-2: (
+                font-family: ("Mulish", sans-serif),
+                font-size: 2.25rem,
+                line-height: 1.5,
+                font-weight: 700,
+                margin-bottom: 1.25rem
+        ),
+        h-3: (
+                font-family: ("Mulish", sans-serif),
+                font-size: 2rem,
+                line-height: 1.5,
+                font-weight: 700,
+                margin-bottom: 1.25rem
+        ),
+        h-4: (
+                font-family: ("Mulish", sans-serif),
+                font-size: 1.75rem,
+                line-height: 1.5,
+                font-weight: 700,
+                margin-bottom: 1.25rem
+        ),
+        h-5: (
+                font-family: ("Mulish", sans-serif),
+                font-size: 1.5rem,
+                line-height: 1.5,
+                font-weight: 700,
+                margin-bottom: 1.25rem
+        ),
+        h-6: (
+                font-family: ("Mulish", sans-serif),
+                font-size: 1.25rem,
+                line-height: 1.5,
+                font-weight: 700,
+                margin-bottom: 1.25rem
+        ),
+        input-text: (
+                font-size: 1rem,
+                line-height: 1.5,
+        ),
+);
+
+// ?
+$typography-mobile: ();
+
+// ?
+// Define styles for buttons.
+// Don't forget to add the same buttons in the $buttons-hover-state and $buttons-active-state maps. Even if empty.
+$buttons: (
+        // Primary:
+        primary: (
+                typography: p, // Uses values from $typography style.
+                background-color: $color-5,
+                color: #FFFFFF,
+                font-weight: bold,
+                padding: .75rem 2rem,
+                border: 2px solid $color-5,
+                border-radius: 50px,
+                text-decoration: none,
+                margin-bottom: 0
+        ),
+        // Secondary:
+        secondary: (
+                typography: p, // Uses values from $typography style.
+                color: $color-2,
+                background-color: #FFFFFF,
+                padding: .75rem 1rem,
+                border: 2px solid $color-4,
+                border-radius: 50px,
+                text-decoration: none,
+                margin-bottom: 0
+        ),
+        // Tertiary:
+        tertiary: (
+                typography: p, // Uses values from $typography style.
+                background-color: $color-6,
+                color: #FFFFFF,
+                font-weight: bold,
+                padding: .75rem 1rem,
+                border: 2px solid $color-6,
+                border-radius: 50px,
+                text-decoration: none,
+                margin-bottom: 0
+        )
+);
+
+$buttons-hover-state: (
+        // Primary:
+        primary: (
+                background-color: $color-dark-1,
+                border: 2px solid $color-dark-1,
+                color: #FFFFFF,
+                text-decoration: none,
+                transition: 0.3s linear
+        ),
+        // Secondary:
+        secondary: (
+                background-color: $color-dark-1,
+                border: 2px solid $color-dark-1,
+                color: #FFFFFF,
+                text-decoration: none,
+                transition: 0.3s linear
+        ),
+        // Tertiary:
+        tertiary: (
+                background-color: $color-dark-1,
+                border: 2px solid $color-dark-1,
+                color: #FFFFFF,
+                text-decoration: none,
+                transition: 0.3s linear
+        ),
+);
+
+$buttons-active-state: (
+        // Primary:
+        primary: (
+                background-color: $color-dark-1,
+                border: 2px solid $color-dark-1,
+                color: #FFFFFF,
+                text-decoration: none,
+                transition: 0.3s linear
+        ),
+        // Secondary:
+        secondary: (
+                background-color: $color-dark-1,
+                border: 2px solid $color-dark-1,
+                color: #FFFFFF,
+                text-decoration: none,
+                transition: 0.3s linear
+        ),
+        // Tertiary:
+        tertiary: (
+                background-color: $color-dark-1,
+                border: 2px solid $color-dark-1,
+                color: #FFFFFF,
+                text-decoration: none,
+                transition: 0.3s linear
+        ),
+);
+
+// ?
+$buttons-mobile: (
+
+);
+
+//
+// Bootstrap vars:
+//
+
+$use-bootstrap-reboot: false;
+
+$font-family-base: // Project related font
+        "Lato",
+        sans-serif,
+            // Cross-platform generic font family (default user interface font)
+        system-ui,
+            // Safari for macOS and iOS (San Francisco)
+        -apple-system,
+            // Windows
+        "Segoe UI",
+            // Android
+            // Emoji fonts
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+$font-size-base: 1rem; // = 16px. Make sure to set $font-size-base in rem.
+$line-height-base: 1.5; // ?
+$line-height-sm: 1.2; // ?
+$line-height-lg: 1.5; // ?
+$paragraph-margin-bottom: 1.25rem;
+
+$body-color: $color-3;
+//$body-bg: $color-1;
+
+// Bootstrap links:
+$link-color: $color-6;
+$link-hover-color: darken($link-color, 20%);
+$link-decoration: underline;
+$link-hover-decoration: underline;
+
+// Bootstrap headings:
+//$h1-font-size: map-get(map-get($typography, h-1), font-size);
+//$h2-font-size: map-get(map-get($typography, h-2), font-size);
+//$h3-font-size: map-get(map-get($typography, h-3), font-size);
+//$h4-font-size: map-get(map-get($typography, h-4), font-size);
+//$h5-font-size: map-get(map-get($typography, h-5), font-size);
+//$h6-font-size: map-get(map-get($typography, h-6), font-size);
+
+// Bootstrap headings:
+$headings-color: #494949;
+$headings-margin-bottom: 1.25rem;
+$headings-font-weight: 600;
+
+$input-placeholder-color: #bbb; // ?
+$input-plaintext-color: #111; // ?
+$input-btn-padding-x: .7rem; // ?
+$input-btn-padding-y: .7rem; // ?
+$input-focus-color: $color-1; // ?
+$input-focus-bg: #FFFFFF; // ?
+$input-focus-border-color: #5A5F65; // ?
+$focus-ring-box-shadow: none; // ?
+
+//
+// Project related vars:
+//
+
+//
+// Top nav row vars:
+//
+// $top-nav-row-max-width is used to set the maximum width of the menu row including the logo. Anyway the background color of the row is applied to the full width.
+$top-nav-row-max-width: 1140px;
+$top-nav-row-min-height: 8.75rem;
+$top-nav-row-spacing-x: .75rem;
+$top-nav-row-spacing-y: 1.5rem;
+$top-nav-row-mobile-spacing-x: 1.5rem;
+$top-nav-row-mobile-spacing-y: false;
+$top-nav-row-bg-color: $color-4;
+$top-nav-row-bg-color-hover: false; // ?
+$top-nav-row-bg-color-scrolled: false; // ?
+
+//
+// Navigation vars:
+//
+$navbar-mobile: $mobile-breakpoint; // Breakpoint at which the mobile menu is displayed
+
+$navbar-item-dropdown-arrow: false; // Adds arrow to the menu item if it has a dropdown. Values: true/false // ?
+$navbar-font-size: 1rem;
+$navbar-item-spacing-x: 1px; // Horizontal spacing around the items
+$navbar-item-spacing-y: 1px; // Vertical spacing around the items
+$navbar-top-items-gap: 2rem; // Gap between the top <li> items.
+
+$navbar-bg-color: $color-4; // Background color of the navigation bar.
+
+$navbar-top-li-bg-color: false; // Background color of the top <li> item.
+$navbar-top-li-bg-color-hover: false; // Background color of the top <li> item on hover.
+$navbar-top-li-bg-color-active: false; // Background color of the top <li> item on active.
+$navbar-top-li-bg-color-current: false; // Background color of the current (active) item or its parent.
+
+$navbar-top-link-spacing-x: 0; // Horizontal spacing around the top <a> links.
+$navbar-top-link-spacing-y: 0; // Vertical spacing around the top <a> links.
+
+$navbar-item-link-color: $color-2;
+$navbar-item-link-decoration: none;
+$navbar-item-link-weight: normal;
+
+$navbar-item-link-hover-color: $color-5;
+$navbar-item-link-hover-decoration: false; // ?
+$navbar-item-link-hover-weight: false; // ?
+
+$navbar-item-link-active-color: $color-5; // ?
+$navbar-item-link-active-decoration: false; // ?
+$navbar-item-link-active-weight: false; // ?
+
+$navbar-item-link-current-color: $color-5; // ?
+$navbar-item-link-current-decoration: false; // ?
+$navbar-item-link-current-weight: false; // ?
+
+//$navbar-submenu-bg-color: #FFFFFF; // Background color of the submenu container.
+$navbar-subm-bg-color: #FFFFFF; // Background color of the submenu container.
+$navbar-mbl-subm-bg-color: unset;
+
+$navbar-subm-items-gap: false; // Gap between the submenu items.
+$navbar-mbl-subm-items-gap: 1.5rem;
+
+//$navbar-submenu-container-spacing-x: false; // Horizontal spacing for the submenu container.
+//$navbar-submenu-container-spacing-y: false; // Vertical spacing for the submenu container.
+$navbar-subm-ul-spacing-y: false; // Vertical spacing for the submenu container.
+$navbar-mbl-subm-ul-spacing-y: 1.5rem;
+
+$navbar-subm-ul-spacing-x: false; // Horizontal spacing for the submenu container.
+$navbar-mbl-subm-ul-spacing-x: 1rem;
+
+//$navbar-submenu-item-bg-color: false; //
+//$navbar-submenu-item-bg-color-hover: false; //
+
+//$navbar-submenu-li-bg-color: false; // Background color of the submenu <li> item.
+//$navbar-submenu-li-bg-color-hover: $color-5; // Background color of the submenu <li> item on hover.
+//$navbar-submenu-li-bg-color-active: $color-5; // Background color of the submenu <li> item on active.
+//$navbar-submenu-li-bg-color-current: $color-5; // Background color of the current (active) submenu item.
+$navbar-subm-li-bg-color: false; // Background color of the submenu <li> item.
+$navbar-mbl-subm-li-bg-color: unset; // Background color of the submenu <li> item.
+
+$navbar-subm-li-bg-color-hover: $color-5; // Background color of the submenu <li> item on hover.
+$navbar-mbl-subm-li-bg-color-hover: unset;
+
+$navbar-subm-li-bg-color-active: $color-5; // Background color of the submenu <li> item on active.
+$navbar-mbl-subm-li-bg-color-active: unset;
+
+$navbar-subm-li-bg-color-current: $color-5; // Background color of the current (active) submenu item.
+$navbar-mbl-subm-li-bg-color-current: unset;
+
+//$navbar-submenu-link-color: $color-4; // Color of the submenu <a> links.
+$navbar-subm-link-color: $color-4; // Color of the submenu <a> links.
+$navbar-mbl-subm-link-color: $color-1;
+
+//$navbar-submenu-link-color-hover: $color-1; // Color of the submenu <a> links.
+$navbar-subm-link-color-hover: $color-1; // Color of the submenu <a> links.
+$navbar-mbl-subm-link-color-hover: $color-5;
+
+//$navbar-submenu-link-color-active: $color-1; // Color of the submenu <a> links.
+$navbar-subm-link-color-active: $color-1;
+$navbar-mbl-subm-link-color-active: $color-5;
+
+//$navbar-submenu-link-color-current: $color-1; // Color of the submenu <a> links.
+$navbar-subm-link-color-current: $color-1;
+$navbar-mbl-subm-link-color-current: $color-5;
+
+$navbar-submenu-link-weight: false; // Font weight of the submenu <a> links.
+$navbar-submenu-link-weight-hover: false; // Font weight of the submenu <a> links on hover.
+
+$navbar-subm-link-spacing-y: 1rem; // Vertical spacing for the submenu <a> links.
+$navbar-mbl-subm-link-spacing-y: 0;
+$navbar-subm-link-spacing-x: 1.5rem; // Horizontal spacing for the submenu <a> links.
+$navbar-mbl-subm-link-spacing-x: 0;
+
+// Mobile navigation:
+
+$navbar-mobile-width: 100%; // Can be like: width: calc(#{vars.$navbar-mobile} * 0.7);
+$navbar-mobile-bg-color: $color-4; // Background color of the navigation container for the mobile
+$navbar-mobile-items-spacing-x: 24px; // Horizontal spacing around the items
+$navbar-mobile-items-spacing-y: 24px; // Vertical spacing around the items
+$navbar-mobile-items-gap: 24px; // Gap between the items.
+$navbar-mobile-items-align: flex-start; // Horizontal alignment of the items.
+
+$navbar-mobile-item-font-color: $color-1;
+$navbar-mobile-item-spacing-x: false; // Horizontal spacing around a single item.
+$navbar-mobile-item-spacing-y: false; // Vertical spacing around a single item.
+
+//$navbar-mobile-submenu-bg-color: $color-1; // Background color of the dropdown container for the mobile.
+//$navbar-mobile-submenu-container-spacing-y: false; // Vertical spacing for the submenu container.
+//$navbar-mobile-submenu-container-spacing-x: false; // Horizontal spacing for the submenu container.
+//$navbar-mobile-submenu-items-gap: 12px; // ?
+//$navbar-mobile-submenu-item-spacing-y: false; // Vertical spacing for the submenu items // ?
+
+$navbar-mobile-submenu-item-spacing-x: false; // Horizontal spacing for the submenu items // ?
+$navbar-mobile-submenu-item-font-color: $color-1;
+
+$navbar-mobile-toggler-bg-color: transparent; // ?
+$navbar-mobile-toggler-bg-color-hover: false; // ?
+$navbar-mobile-toggler-border: none; // ?
+$navbar-mobile-toggler-border-radius: false; // ?
+$navbar-mobile-toggler-line-color: $color-1; // ?
+$navbar-mobile-toggler-line-color-hover: $color-1; // ?
+$navbar-mobile-toggler-line-height: 3px; // ?
+$navbar-mobile-toggler-width: 28px; // ?
+$navbar-mobile-toggler-height: 24px; // ?
+$navbar-mobile-toggler-padding: 2px; // ?
+
+$navbar-mobile-closer-line-height: 2px; // ?
+$navbar-mobile-closer-line-color: $color-1; // ?
+$navbar-mobile-closer-width: 30px; // ?
+$navbar-mobile-closer-height: 30px; // ?
+
+$navbar-mbl-dropdown-arrow-color: $color-2; // Color of the dropdown arrow on mobile.
+
+//
+// Footer vars:
+//
+
+$footer-max-width: $top-nav-row-max-width;
+$footer-spacing-y: 2rem;
+$footer-bg-color: $top-nav-row-bg-color;
+$footer-rows-gap: false;
+$footer-widget-gap: false;
+
+//
+// Content related vars:
+//
+
+// $max-content-layout-width is used to set the maximum width of the content wrapper/container.
+$post-content-spacing-x: 1.5rem; // Spacing around the one of the horizontal sides of the content.
+$post-content-spacing-y: 2rem; // Spacing around the one of the vertical sides of the content.
+$post-content-spacing-bottom: 18.75rem; // Spacing around the one of the sides of the content.
+$breakout-content-spacing-x: 0.75rem; // in case the screen is narrower than the $breakout-content-max-width.
+
+$post-content-max-width: 71.25rem + $post-content-spacing-x; // Sync with theme.json -> layout -> contentSize.
+$breakout-content-max-width: 80rem + $breakout-content-spacing-x; // Sync with theme.json -> layout -> wideSize.
+$container-wider-max-width: calc($post-content-max-width + 4rem); // For. content-width-wider. Should be wider than normal post content.
+$container-narrow-max-width: calc($post-content-max-width - 10rem); // For. content-width-narrow. Should be narrower than normal post content.
+$container-with-sidebar-max-width: false; //
+$container-with-sidebar-gap: false; // Gap between sidebar and content.
+$sidebar-content-width: 330px; // or 268px ?? // ?
+
+$post-content-flow-spacing: 1rem; // For .flow class. Adds spacing between the items.
+
+$cover-block-height: unset; // ?
+$cover-block-min-height: 450px; // ?
+
+$wp-block-group-items-default-gap: false; // If set then all blocks in the group will have margin-bottom of this value. // ?
+$wp-block-buttons-gap: 24px; // ?
+
+//
+// Sliders
+//
+$slider-hero-max-height: false; // 99vh; // ?
+$slider-hero-content-font-color: #ffffff; // ?
+
+//
+// The WP Blocks
+//
+////////////////////////////////
+
+//
+// Custom Container (custom-container)
+//
+$custom-container-spacing-y: 60px; // ?
+$custom-container-spacing-y-mobile: 50px; // ?
+$custom-container-has-horizontal-scroller-option: true; // ?
+$custom-container-has-grid-layout-option: true; // ?
+$custom-container-has-flex-layout-option: true; // ?
+$custom-container-horizontal-scroller-gap: 30px; // ?
+$custom-container-grid-layout-gap: 30px; // ?
+$custom-container-flex-layout-gap: 30px; // ?
+
+//
+// Custom Gallery Container (custom-gallery-container)
+//
+$custom-gallery-container-spacing-y: 30px; // ?
+
+//
+// Custom Media + Text Container (custom-mdia-text-container)
+//
+$custom-media-text-container-spacing-y: 70px; // ?
+$custom-media-text-container-gap: 100px; // ?
+$custom-media-text-container-gap-mobile: 32px; // ?
+
+//
+// Card (card)
+//
+$card-container-default-width: 100%; // ?
+$card-inside-gap: 20px; // ?
+$card-container-padding-x: 20px; // ?
+$card-container-padding-y: 20px; // ?
+$card-container-border-radius: 20px; // ?
+
+//
+// Card with Image (card-image)
+//
+$card-image-default-width: 100%; // ?
+$card-image-inside-gap: 12px; // ?
+$card-image-padding-x: 0; // ?
+$card-image-padding-y: 0; // ?
+$card-image-border-radius: false; // ?
